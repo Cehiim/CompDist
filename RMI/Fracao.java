@@ -1,5 +1,8 @@
-public class Fracao
+import java.io.Serializable;
+
+public class Fracao implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     public int numerador;
     public int denominador;
 
@@ -27,4 +30,11 @@ public class Fracao
         numerador /= divisor_comum;
         denominador /= divisor_comum;
     }
+
+    @Override
+    public String toString() 
+    {
+        return numerador + "/" + denominador;
+    }
 }
+
