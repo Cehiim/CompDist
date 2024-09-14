@@ -30,7 +30,7 @@ class Conta
                 if(saldo<valor)
                 {
                     std::cout << "Saldo insuficiente." << std::endl;
-                    break;
+                    return;
                 }
                 else
                 {
