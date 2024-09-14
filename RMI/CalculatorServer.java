@@ -31,15 +31,16 @@ public class CalculatorServer implements Calculator {
     {
         while(b != 0)
         {
-            a = b;
-            b = a%b;
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
         return a;
     }
 
     private int mmc(int a, int b)
     {
-        return a * (b / mdc(a, b));
+        return a * (b/mdc(a, b));
     }
 
     public Fracao addF(Fracao a, Fracao b) throws RemoteException
@@ -52,7 +53,9 @@ public class CalculatorServer implements Calculator {
         else
         {
             int multiplo_comum = mmc(a.denominador, b.denominador);
-            resposta = new Fracao(a.numerador+b.numerador, multiplo_comum);
+            int novo_a = a.numerador * (multiplo_comum / a.denominador);
+            int novo_b = b.numerador * (multiplo_comum / b.denominador);
+            resposta = new Fracao(novo_a + novo_b, multiplo_comum);
         }
         return resposta;
     }
@@ -60,14 +63,16 @@ public class CalculatorServer implements Calculator {
     public Fracao subtractF(Fracao a, Fracao b) throws RemoteException
     {
         Fracao resposta;
-        if(a.denominador == b.denominador)
+        if (a.denominador == b.denominador)
         {
-            resposta = new Fracao(a.numerador-b.numerador, a.denominador);
+            resposta = new Fracao(a.numerador - b.numerador, a.denominador);
         }
-        else
-        {
+         else
+         {
             int multiplo_comum = mmc(a.denominador, b.denominador);
-            resposta = new Fracao(a.numerador-b.numerador, multiplo_comum);
+            int novo_a = a.numerador * (multiplo_comum / a.denominador);
+            int novo_b = b.numerador * (multiplo_comum / b.denominador);
+            resposta = new Fracao(novo_a - novo_b, multiplo_comum);
         }
         return resposta;
     }
