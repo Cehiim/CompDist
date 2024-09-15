@@ -11,7 +11,7 @@ typedef struct
 void ler(Pessoa *pessoas)
 {
     FILE *arq;
-    int c, cont = 0;
+    int cont = 0;
     arq = fopen("pessoas.txt", "r");
     if (arq == NULL)
     {
@@ -55,3 +55,4 @@ int main()
     imprimir(pessoas, n);
     return 0;
 }
+
