@@ -35,10 +35,10 @@ class CalculatorStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Sum = channel.unary_unary(
-                '/calculator.Calculator/Sum',
-                request_serializer=calc__pb2.SumRequest.SerializeToString,
-                response_deserializer=calc__pb2.SumResponse.FromString,
+        self.Mult = channel.unary_unary(
+                '/calculator.Calculator/Mult',
+                request_serializer=calc__pb2.MultRequest.SerializeToString,
+                response_deserializer=calc__pb2.MultResponse.FromString,
                 _registered_method=True)
 
 
@@ -46,7 +46,7 @@ class CalculatorServicer(object):
     """The calculator service definition.
     """
 
-    def Sum(self, request, context):
+    def Mult(self, request, context):
         """Sends a SumRequest and receives a SumResponse.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -56,10 +56,10 @@ class CalculatorServicer(object):
 
 def add_CalculatorServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Sum': grpc.unary_unary_rpc_method_handler(
-                    servicer.Sum,
-                    request_deserializer=calc__pb2.SumRequest.FromString,
-                    response_serializer=calc__pb2.SumResponse.SerializeToString,
+            'Mult': grpc.unary_unary_rpc_method_handler(
+                    servicer.Mult,
+                    request_deserializer=calc__pb2.MultRequest.FromString,
+                    response_serializer=calc__pb2.MultResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -74,7 +74,7 @@ class Calculator(object):
     """
 
     @staticmethod
-    def Sum(request,
+    def Mult(request,
             target,
             options=(),
             channel_credentials=None,
@@ -87,9 +87,9 @@ class Calculator(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/calculator.Calculator/Sum',
-            calc__pb2.SumRequest.SerializeToString,
-            calc__pb2.SumResponse.FromString,
+            '/calculator.Calculator/Mult',
+            calc__pb2.MultRequest.SerializeToString,
+            calc__pb2.MultResponse.FromString,
             options,
             channel_credentials,
             insecure,

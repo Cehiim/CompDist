@@ -12,7 +12,7 @@ from google.protobuf.internal import builder as _builder
 _runtime_version.ValidateProtobufRuntimeVersion(
     _runtime_version.Domain.PUBLIC,
     5,
-    27,
+    28,
     2,
     '',
     'calc.proto'
@@ -24,17 +24,19 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ncalc.proto\x12\ncalculator\".\n\nSumRequest\x12\x0f\n\x07number1\x18\x01 \x01(\x01\x12\x0f\n\x07number2\x18\x02 \x01(\x01\"\x1d\n\x0bSumResponse\x12\x0e\n\x06result\x18\x01 \x01(\x01\x32\x44\n\nCalculator\x12\x36\n\x03Sum\x12\x16.calculator.SumRequest\x1a\x17.calculator.SumResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ncalc.proto\x12\ncalculator\"W\n\x0bMultRequest\x12#\n\x05\x66rac1\x18\x01 \x01(\x0b\x32\x14.calculator.Fraction\x12#\n\x05\x66rac2\x18\x02 \x01(\x0b\x32\x14.calculator.Fraction\"$\n\x08\x46raction\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0b\n\x03\x64\x65n\x18\x02 \x01(\x05\"4\n\x0cMultResponse\x12$\n\x06result\x18\x01 \x01(\x0b\x32\x14.calculator.Fraction2G\n\nCalculator\x12\x39\n\x04Mult\x12\x17.calculator.MultRequest\x1a\x18.calculator.MultResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'calc_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_SUMREQUEST']._serialized_start=26
-  _globals['_SUMREQUEST']._serialized_end=72
-  _globals['_SUMRESPONSE']._serialized_start=74
-  _globals['_SUMRESPONSE']._serialized_end=103
-  _globals['_CALCULATOR']._serialized_start=105
-  _globals['_CALCULATOR']._serialized_end=173
+  _globals['_MULTREQUEST']._serialized_start=26
+  _globals['_MULTREQUEST']._serialized_end=113
+  _globals['_FRACTION']._serialized_start=115
+  _globals['_FRACTION']._serialized_end=151
+  _globals['_MULTRESPONSE']._serialized_start=153
+  _globals['_MULTRESPONSE']._serialized_end=205
+  _globals['_CALCULATOR']._serialized_start=207
+  _globals['_CALCULATOR']._serialized_end=278
 # @@protoc_insertion_point(module_scope)
