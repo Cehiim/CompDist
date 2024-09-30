@@ -1,7 +1,5 @@
 import pygame
 import math
-from player import Player
-from controller import Controller
 
 class Screen:
     def __init__(self):
