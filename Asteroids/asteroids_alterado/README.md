@@ -9,3 +9,5 @@ Os princípios SOLID são um conjunto de cinco diretrizes para a programação o
 O código original não segue os princípios SOLID. Porque a responsabilidade do sistema não foi dividida entre classes e portanto não há como adicionar novas funcionalidades sem alterar o código existente, ou seja, os princípios 1 e 2 foram violados.
 
 Após a alteração, o sistema foi dividido entre classes de forma que cada classe represente uma responsabilidade específica do sistema e que cada método represente um único comportamento de uma classe.
+
+![asteroids UML drawio](https://github.com/user-attachments/assets/98b40fbe-9d84-4a62-955c-b3b084b5e90a)
