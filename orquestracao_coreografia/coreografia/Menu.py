@@ -5,6 +5,7 @@ from Catalogo import Catalogo
 
 def menu():
     catalogo = Catalogo()
+    carrinho = Carrinho()
     while(True):
         catalogo.mostrarCatalogo()
         print(
@@ -12,7 +13,7 @@ def menu():
 1) Adicionar produto no carrinho de compras
 2) Acessar carrinho de compras
 3) Realizar pedido
-4) Sair
+4) Sair do programa
             '''
             )
         
@@ -25,7 +26,6 @@ def menu():
                     if(indice < 0 or indice >= catalogo.qtde):
                         print("Índice inválido.")
                     else:
-                        carrinho = Carrinho()
                         carrinho.adicionarProduto(catalogo.produtos[indice])
                 except ValueError:
                     print("Índice inválido.")
@@ -39,7 +39,7 @@ def menu():
                             '''
 1) Remover um produto
 2) Esvaziar carrinho de compras
-3) Voltar
+3) Voltar ao catálogo
                             '''
                         )
                         try:
@@ -52,18 +52,24 @@ def menu():
                                 except ValueError:
                                     print("Índice inválido.")
 
-                            if opcao2 == 2:
+                            elif opcao2 == 2:
                                 carrinho.removerTudo()
 
-                            if opcao2 == 3:
+                            elif opcao2 == 3:
                                 break
 
                             else:
-                                print("Opção inválida.")
+                                print("sdadasOpção inválida.")
                         except ValueError:
                             print("Opção inválida.")
                     except NameError:
                         print("Carrinho vazio.")
+
+                    sleep(1)
+                    if os.name == 'nt': # Limpa o terminal caso o OS seja Windows
+                        os.system('cls')
+                    else:
+                        os.system('clear') # Limpa o terminal caso o OS seja Linux ou MacOS
 
             elif opcao == 3:
                 carrinho.removerTudo
@@ -71,14 +77,14 @@ def menu():
             
             elif opcao == 4:
                 print("Encerrando programa...")
-                exit()
+                break
 
             else:
                 print("Opção inválida.")
         except ValueError:
             print("Opção inválida.")
 
-        sleep(2)
+        sleep(1)
         if os.name == 'nt': # Limpa o terminal caso o OS seja Windows
             os.system('cls')
         else:
