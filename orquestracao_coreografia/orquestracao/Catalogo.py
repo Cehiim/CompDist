@@ -1,17 +1,11 @@
 from Produto import Produto
 import csv
-import os
 
 class Catalogo:
     def __init__(self):
-        # Obtém o diretório do script atual
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        # Sobe um nível no diretório e combina com o nome do arquivo CSV
-        csv_path = os.path.join(current_dir, "..", "games.csv")
-
         self.produtos = []
         self.qtde = 0
-        with open(csv_path, "r", encoding="utf-8") as arquivo:
+        with open("games.csv", "r", encoding="utf-8") as arquivo:
             leitor = csv.reader(arquivo)
             next(leitor)  # Pular o cabeçalho
             for linha in leitor:

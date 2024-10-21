@@ -12,8 +12,7 @@ def menu():
             '''
 1) Adicionar produto no carrinho de compras
 2) Acessar carrinho de compras
-3) Realizar pedido
-4) Sair do programa
+3) Sair do programa
             '''
             )
         
@@ -39,7 +38,8 @@ def menu():
                             '''
 1) Remover um produto
 2) Esvaziar carrinho de compras
-3) Voltar ao catálogo
+3) Realizar pedido
+4) Voltar ao catálogo
                             '''
                         )
                         try:
@@ -56,10 +56,18 @@ def menu():
                                 carrinho.removerTudo()
 
                             elif opcao2 == 3:
+                                # Lógica de pagamento...
+                                # Lógica de notificação...
+                                print("Realizando pagamento...")
+                                sleep(4)
+                                carrinho.removerTudo()
+                                print("Pedido realizado.")
+
+                            elif opcao2 == 4:
                                 break
 
                             else:
-                                print("sdadasOpção inválida.")
+                                print("Opção inválida.")
                         except ValueError:
                             print("Opção inválida.")
                     except NameError:
@@ -70,12 +78,8 @@ def menu():
                         os.system('cls')
                     else:
                         os.system('clear') # Limpa o terminal caso o OS seja Linux ou MacOS
-
-            elif opcao == 3:
-                carrinho.removerTudo
-                print("Pedido realizado.")
             
-            elif opcao == 4:
+            elif opcao == 3:
                 print("Encerrando programa...")
                 break
 

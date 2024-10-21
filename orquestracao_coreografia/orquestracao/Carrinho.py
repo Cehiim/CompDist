@@ -10,17 +10,17 @@ class Carrinho:
         if(self.qtde > 0):
             print("Indíce\tTítulo\tPreço")
             for i in range(self.qtde):
-                nome = self.produtos[i].nome()
-                preco = self.produtos[i].preco()
+                nome = self.produtos[i].nome
+                preco = self.produtos[i].preco
                 print(f"{i}\t{nome}\t{preco:.2f}")
-            print(f"\nTotal: {self.custo}")
+            print(f"\nTotal: {self.custo:.2f}")
         else:
             print("Carrinho vazio.")
     
     def adicionarProduto(self, produto):
         if produto not in self.produtos:
             self.produtos.append(produto)
-            self.custo += produto.preco()
+            self.custo += produto.preco
             self.qtde += 1
             print("Produto adicionado.")
         else:
@@ -30,7 +30,7 @@ class Carrinho:
         if(indice >= self.qtde or indice < 0):
             print("Índice inválido.")
         else:
-            preco_produto = self.produtos[indice].preco()
+            preco_produto = self.produtos[indice].preco
             self.qtde -= 1
             self.custo -= preco_produto
             self.produtos.pop(indice)
