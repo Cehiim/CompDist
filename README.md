@@ -1,1 +1,1 @@
-# CompDist
+Repositório das atividades de Computação Distribuída.
