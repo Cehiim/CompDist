@@ -1,3 +1,8 @@
+// André Franco Ranieri 10390470
+// Cesar Hideki Imai 10402758
+// David Varão Lima Bentes Pessoa 10402647
+// João Victor Dallapé Madeira 10400725
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;

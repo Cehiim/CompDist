@@ -1,10 +1,15 @@
+// André Franco Ranieri 10390470
+// Cesar Hideki Imai 10402758
+// David Varão Lima Bentes Pessoa 10402647
+// João Victor Dallapé Madeira 10400725
+
 import java.io.*;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Receiver {
-    private static final String[] HOSTS = {"192.168.0.8","172.16.18.103", "172.24.128.1"};
+    private static final String[] HOSTS = {"192.168.176.1","172.16.18.103", "172.24.128.1"};
     private static final int NUM_HOSTS = 3;
     private static final int PORT = 5001;
     private static final int BUFFER_SIZE = 4096;
