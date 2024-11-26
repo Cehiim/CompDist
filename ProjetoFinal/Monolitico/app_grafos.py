@@ -671,7 +671,7 @@ def menu(modelo):
             choice = int(choice)
             if choice == 1: # Cria grafo
                 #dados = leArquivoHTTP("https://raw.githubusercontent.com/Cehiim/TeoriaDosGrafos/refs/heads/main/ProjetoFinal/teste.txt")
-                dados = leArquivo("palavras.txt")
+                dados = leArquivo("teste.txt")
                 try:
                     n_palavras = dados[0] # Número de palavras
                     vertices = dados[1] # Lista de palavras
