@@ -449,7 +449,8 @@ def imprimeGrafo(n_palavras, vertices, grafo):
   imprimeArestas(net, n_palavras, vertices, grafo)
 
   net.barnes_hut() # Dispersa melhor os vértices
-  net.show("grafo.html") # Salva o grafo
+  #net.show("grafo.html") # Salva o grafo
+  net.write_html("grafo.html", open_browser=True, notebook=False)
 
   print(f"\nGrafo não-direcionado rotulado com {grafo.n} vértices e {grafo.m} arestas\n")
   print("O grafo visual foi criado no arquivo 'grafo.html'.")
@@ -490,7 +491,8 @@ def imprimeGrafoColorido(n_palavras, vertices, grafo, n_grupos, grupos):
     imprimeVerticesColoridos(net, n_palavras, vertices, cores, grupos)
     imprimeArestas(net, n_palavras, vertices, grafo)
     net.barnes_hut() # Dispersa melhor os vértices
-    net.show("grafo_colorido.html") # Salva o grafo
+    #net.show("grafo_colorido.html") # Salva o grafo
+    net.write_html("grafo_colorido.html", open_browser=True, notebook=False)
 
     print(f"\nGrafo não-direcionado rotulado com {grafo.n} vértices, {grafo.m} arestas e {n_grupos} cores\n")
     print("O grafo visual foi criado no arquivo 'grafo_colorido.html'.")
@@ -525,7 +527,8 @@ def imprimeAPCM(n_palavras, vertices, grafo):
         )
 
     net.barnes_hut() # Dispersa melhor os vértices
-    net.show("apcm.html") # Salva o grafo
+    #net.show("apcm.html") # Salva o grafo
+    net.write_html("apcm.html", open_browser=True, notebook=False)
 
     print("O grafo visual foi criado no arquivo 'apcm.html'.")
 
@@ -585,7 +588,8 @@ def caminhoHamiltoniano(grafo, n_palavras, vertices):
             color="gray"
         )
     net.barnes_hut() # Dispersa melhor os vértices
-    net.show("caminho_hamiltoniano.html") # Salva o grafo
+    #net.show("caminho_hamiltoniano.html") # Salva o grafo
+    net.write_html("caminho_hamiltoniano", open_browser=True, notebook=False)
     print("O grafo visual foi criado no arquivo 'caminho_hamiltoniano.html'.")
     #print("Caminho hamiltoniano encontrado:", path)
 
