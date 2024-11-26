@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 10
 Amor
 Cidade
@@ -9,3 +10,16 @@ Montanha
 Música
 Sol
 Viagem
+=======
+10
+Amor
+Cidade
+Livro
+Casa
+Amigo
+Escola
+Montanha
+Música
+Sol
+Viagem
+>>>>>>> 1b6a8cb2047e0fc6e4f0f9e58f4c30a48989a247
